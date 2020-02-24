@@ -1,0 +1,54 @@
+{
+  "name": "@kava-labs/crypto-rate-utils",
+  "version": "2.0.5",
+  "description": "Fetch exchange rates for conversions between crypto assets",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint --project .",
+    "format": "prettier '**/*.{js,ts,json}' --ignore-path .gitignore",
+    "format:check": "npm run format -- --list-different",
+    "check": "run-s lint format:check",
+    "fix": "run-s 'lint -- --fix' 'format -- --write'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kava-Labs/crypto-rate-utils.git"
+  },
+  "author": "Kincaid O'Neil <kincaid@kava.io> (https://kincaidoneil.com/)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Kava-Labs/crypto-rate-utils/issues"
+  },
+  "homepage": "https://github.com/Kava-Labs/crypto-rate-utils#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bignumber.js": "^7.2.1",
+    "socket.io-client": "^2.1.1",
+    "ws": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.7",
+    "@types/ws": "^6.0.1",
+    "husky": "^1.2.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.14.3",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.16.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.1.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run check"
+    }
+  }
+}
